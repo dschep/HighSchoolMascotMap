@@ -1,4 +1,6 @@
 ---
+title: HighSchoolMascotMap
+icon: https://raw.githubusercontent.com/watmildon/HighSchoolMascotMap/refs/heads/main/icons/Letterman_H.png
 options:
   hash: m
   attributionControl:
@@ -1137,12 +1139,11 @@ style:
               - icons8-school-60
           - .png
 ---
-[out:json][timeout:800];
-rel(148838);map_to_area->.searchArea;
+[out:json][timeout:800][bbox:{{bbox}}];
 // determine set of schools
 (
-  nwr[mascot][amenity=school](area.searchArea);
-  nwr[mascot][amenity=university](area.searchArea);
+  nwr[mascot][amenity=school];
+  nwr[mascot][amenity=university];
 );
 
 out center;
